@@ -1,0 +1,31 @@
+$title-size: 1.5em;
+
+.about {
+  max-width: 800px;
+  margin: 0 auto;
+  margin-top: 5em;
+  padding: 0 $page-padding-mobile;
+
+  @media (max-width: $screen-phone-max) {
+    margin-top: 1em;
+  }
+
+  &__title {
+    font-size: $title-size;
+  }
+
+  &__subtitle {
+    font-size: $title-size;
+  }
+
+  &__section {
+    margin-bottom: 3.5em;
+
+    &__paragraph__credit {
+      &__name {
+        font-weight: bold;
+        margin-right: .5em;
+      }
+    }
+  }
+}

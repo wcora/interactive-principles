@@ -1,0 +1,165 @@
+@import "vars";
+
+.modal-backdrop.show {
+  opacity: .7;
+}
+
+%section-title {
+  font-size: .9em;
+  text-transform: uppercase;
+
+  @include themed() {
+    color: t('dark');
+  }
+}
+
+.card-modal {
+  $height: calc(100% - 3.5rem);
+  max-width: 1200px;
+  font-family: $font-stack;
+
+  .modal-content {
+    border-radius: $slightlyrounded-corner + 2;
+
+    button.close {
+      padding: 18px 16px;
+      font-size: 32px;
+    }
+  }
+
+  &__header {
+    @include bg-dark;
+    $num-width: 40px;
+    padding: 10px 20px 5px;
+    border-radius: $slightlyrounded-corner $slightlyrounded-corner 0 0;
+
+    &__id {
+      position: absolute;
+      left: 15px;
+      font-size: 28px;
+      width: $num-width;
+      height: $num-width;
+    }
+
+    &__title {
+      color: $text--white;
+      margin-left: $num-width + 10px;
+      text-transform: capitalize;
+    }
+
+    &__cat {
+      @include bg-mid;
+      @include text-dark;
+      font-size: 22px;
+      font-weight: $font-weight--cat;
+      border-radius: 25px;
+      padding: 2px 15px;
+      margin-left: 18px;
+
+      @media (max-width: $screen-phone-max) {
+        display: none;
+      }
+    }
+  }
+
+  h4 {
+    font-size: 14px;
+  }
+
+  &__body {
+    $padding-top: 10px;
+    $padding-sides: 15px;
+    $section-padding: $padding-top $padding-sides;
+    padding-top: 0;
+    padding-bottom: 0;
+    overflow: scroll;
+
+    h3 {
+      @extend %section-title;
+    }
+
+    &__side-panel {
+      @include bg-light;
+      border-radius: 0 0 0 $slightlyrounded-corner;
+      padding: 0;
+
+      &:after {
+        content: '';
+        @include bg-light;
+        width: 100%;
+        height: $height;
+      }
+
+      &__img {
+        @include bg-light;
+        background-position: center center;
+        background-repeat: no-repeat;
+        height: 240px;
+        background-size: 75%;
+      }
+
+      &__definition {
+        padding: $padding-top ($padding-sides * 2);
+      }
+
+      &__comparison {
+        padding: $padding-top ($padding-sides * 2);
+
+        .comparison {
+          border-color: $button-bg;
+        }
+
+        .comparison__icon {
+
+          &:after {
+            @include themed() {
+              border-left-color: t('light');
+            }
+          }
+
+          &:before {
+            border-left-color: $button-bg;
+          }
+        }
+      }
+
+      &__related {
+        padding: $padding-top ($padding-sides * 2);
+        text-transform: capitalize;
+        cursor: pointer;
+
+        a {
+          text-decoration: underline!important;
+        }
+      }
+    }
+
+    &__details {
+      max-height: 600px;
+      padding: $section-padding;
+
+      &__section {
+        padding: $section-padding;
+        margin-bottom: 1em;
+
+        p {
+          margin-bottom: 0;
+        }
+
+        &__questions {
+          white-space: pre-line;
+
+          p {
+            font-style: italic;
+            line-height: 2;
+          }
+        }
+
+        &__related {
+          padding: $section-padding;
+        }
+      }
+    }
+  }
+
+}

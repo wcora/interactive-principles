@@ -1,0 +1,62 @@
+$width: 80px;
+
+//.navigation {
+//  width: $width;
+//  left: auto!important;
+//}
+
+//#sidebar-button {
+//  z-index: 17;
+//  position: absolute;
+//  right: 3em;
+//  top: 2em;
+//  background: transparent;
+//  background-color: transparent;
+//  border: none;
+//
+//  @extend .btn;
+//  @extend .btn-link;
+//
+//  img {
+//    margin-right: 7px;
+//  }
+//}
+
+@media (max-width: $screen-xs-max) {
+  #sidebar-button {
+    right: 1em;
+    top: 1em;
+  }
+}
+//
+//.sidebar {
+//  //z-index: 16!important;
+//  //background: transparentize(#fff, .1);
+//  min-width: $width;
+//  padding-top: 6em;
+//
+//  &__link {
+//    display: inline-block;
+//    padding: .5em 0;
+//    margin: .5em 0;
+//    width: 100%;
+//    font-size: 1.2em;
+//    text-decoration: none;
+//    text-align: center;
+//
+//    &:hover {
+//      //background-color: $button-bg--hover;
+//      text-decoration: none;
+//    }
+//
+//    i {
+//      margin-left: 5px;
+//    }
+//  }
+//}
+
+.sidebar-overlay {
+  //background: none;
+  //background-color: transparent!important;
+  z-index: 15!important;
+}

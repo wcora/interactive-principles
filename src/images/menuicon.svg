@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="30px" height="30px" viewBox="0 0 30 30" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 48 (47235) - http://www.bohemiancoding.com/sketch -->
+    <title>menuicon</title>
+    <desc>Created with Sketch.</desc>
+    <defs></defs>
+    <g id="Symbols" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="menuicon">
+            <g id="Group" transform="translate(1.000000, 1.000000)">
+                <rect id="Rectangle-4" fill="#F0BBAC" x="0" y="0" width="28" height="8" rx="1"></rect>
+                <rect id="Rectangle-4-Copy" fill="#B2DBB8" x="0" y="10" width="28" height="8" rx="1"></rect>
+                <rect id="Rectangle-4-Copy-2" fill="#96D1D0" x="0" y="20" width="28" height="8" rx="1"></rect>
+            </g>
+        </g>
+    </g>
+</svg>

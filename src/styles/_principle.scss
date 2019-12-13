@@ -1,0 +1,305 @@
+@import "vars";
+//vars
+$btn-bg:#fff;
+$btn-hover-bg:#7B978A;
+$btn-text:#3F6050;
+$btn-hover-text:#fff;
+$sub-bg:#E7F1ED;
+$sub-text:#545454;
+//config
+$menu-items:7+1;
+$l-items:4+1;
+
+#identifier{
+  >div {
+    height: 14px;
+    width: 14px;
+    display: inline-block;
+    margin-right: 15px;
+  }
+  //text-transform: uppercase;
+  color: $sub-text;
+  font-weight: 500;
+  font-size: 15px;
+  margin-top: -15px;
+  margin-bottom: 10px;
+}
+
+.more{
+  border-radius: 50%;
+  margin-left: 20px;
+  height: 24px;
+  width: 24px;
+  margin-top: -5px;
+  background-color: $btn-hover-bg;
+  color:$btn-bg;
+  font-weight: bold;
+  border: none;
+  &:hover{
+    box-shadow: 0 0 10px $btn-hover-bg;
+  }
+}
+
+/*----------------------------------
+ *    System 1: Game Design Menu
+ *----------------------------------*/
+
+.menu p, .lmenu p{
+  text-align:center;
+  line-height: 1em;
+  padding-top:20px;
+}
+
+%btn{
+  background:$btn-bg;
+  border-radius:8px;
+  width:200px;
+  height:65px;
+  position:absolute;
+  left:0;
+  top:20px;
+  color:$btn-text;
+  border: 2px solid $btn-text;
+  text-align:center;
+  line-height:80px;
+  transform:translate3d(0,0,0);
+  transition:transform ease-out 200ms;
+}
+
+
+.gmenu-open, .lmenu-open{
+  display:none;
+}
+
+.menu-item, .l-item{
+  @extend %btn;
+}
+
+.menu{
+  $width:200px;
+  $height:100px;
+  position:relative;
+  float: left;
+  padding-top:20px;
+  width:$width;
+  height:$height;
+  box-sizing:border-box;
+  font-size:20px;
+  text-align:left;
+}
+
+.menu-item{
+  background: $sub-bg;
+  color: $sub-text;
+  border: none;
+  &:hover{
+    opacity: 0.6;
+
+  }
+  @for $i from 1 through $menu-items{
+    &:nth-child(#{$i+2}){
+      transition-duration:180ms;
+    }
+  }
+}
+
+.gamebtn{
+  @extend %btn;
+  z-index:2;
+  transition-timing-function:cubic-bezier(0.175, 0.885, 0.320, 1.275);
+  transition-duration:400ms;
+  transform:scale(1,1) translate3d(0,0,0);
+  cursor:pointer;
+}
+
+.gamebtn:hover{
+  transform:scale(1.01,1.01) translate3d(0,0,0);
+}
+
+.gmenu-open:checked~.menu-item:first-of-type{
+  @media (min-width: 480px){
+    height: 150px;
+  }
+}
+
+.gmenu-open:checked+.gamebtn{
+  background-color:$btn-hover-bg !important;
+  color: $btn-hover-text !important;
+  border: none;
+  transition-timing-function:linear;
+  transition-duration:200ms;
+  transform:scale(0.99,0.99) translate3d(0,0,0);
+}
+
+.gmenu-open:checked~.menu-item{
+  cursor:pointer;
+  transition-timing-function:cubic-bezier(0.935, 0.000, 0.340, 1.330);
+  @for $i from 1 through $menu-items{
+
+    @if $i == 1 {
+      $pos: 0;
+      &:nth-child(#{$i+2}) {
+        transition-duration: 80ms+(100ms*$i);
+        transform: translate3d($pos, 80px, 0);
+      }
+    } @else if $i <= 4 {
+      $x:200px;
+      $pos:calc(#{$x + 20px} * #{$i} - #{$x} - 20px);
+      &:nth-child(#{$i+2}) {
+        transition-duration: 80ms+(100ms*$i);
+        transform: translate3d($pos, 80px, 0);
+      }
+    } @else{
+      $x:200px;
+      $pos:calc(#{$x + 20px} * #{$i - 3} - #{$x} - 20px);
+      &:nth-child(#{$i+2}) {
+        transition-duration: 80ms+(100ms*$i);
+        transform: translate3d($pos, 160px, 0);
+      }
+    }
+  }
+
+  @media (max-width: 992px) and (min-width: 480px) {
+    @for $i from 1 through $menu-items {
+      $x: 200px;
+
+      @if $i == 1 {
+        $pos: 0;
+        &:nth-child(#{$i+2}) {
+          transition-duration: 80ms+(100ms*$i);
+          transform: translate3d($pos, 80px, 0);
+        }
+      } @else if $i == 2 {
+        $x: 200px;
+        $pos: calc(#{$x + 20px} * #{$i} - #{$x} - 20px);
+        &:nth-child(#{$i+2}) {
+          transition-duration: 80ms+(100ms*$i);
+          transform: translate3d($pos, 80px, 0);
+        }
+      } @else if $i == 3 {
+        $lpos: calc(#{$x + 20px} * #{$i - 1} - #{$x} - 20px);
+        &:nth-child(#{$i+2}) {
+          transition-duration: 80ms+(100ms*$i);
+          transform: translate3d($lpos, 160px, 0);
+        }
+      } @else if $i <= 5 {
+        $lpos: calc(#{$x + 20px} * #{$i - 3} - #{$x}  - 20px);
+        &:nth-child(#{$i+2}) {
+          transition-duration: 80ms+(100ms*$i);
+          transform: translate3d($lpos, 240px, 0);
+        }
+      } @else {
+        $lpos: calc(#{$x + 20px} * #{$i - 5} - #{$x} - 20px);
+        &:nth-child(#{$i+2}) {
+          transition-duration: 80ms+(100ms*$i);
+          transform: translate3d($lpos, 320px, 0);
+        }
+      }
+    }
+  }
+  // max phone size
+  @media (max-width: 479px){
+    @for $i from 1 through $menu-items{
+      &:nth-child(#{$i+2}) {
+        transition-duration: 80ms+(100ms*$i);
+        transform: translate3d(0, 80px * $i, 0);
+      }
+    }
+  }
+}
+
+/*----------------------------------
+ *  System 2: Learning Principles
+ *----------------------------------*/
+
+.lmenu{
+  $width:200px;
+  $height:100px;
+  position:relative;
+  float: left;
+
+  @media (min-width: 480px){
+    margin-left: 20px;
+  }
+
+  width:$width;
+  height:$height;
+  box-sizing:border-box;
+  font-size:20px;
+  text-align:left;
+}
+
+.l-item{
+  background: $sub-bg;
+  color: $sub-text;
+  border: none;
+  &:hover{
+    opacity: 0.6;
+  }
+  @for $i from 1 through $l-items{
+    &:nth-child(#{$i+2}){
+      transition-duration:180ms;
+    }
+  }
+}
+
+.line-2 {
+    padding-top: 12px !important;
+  }
+
+.learnbtn{
+  @extend %btn;
+  z-index:4;
+  transition-timing-function:cubic-bezier(0.175, 0.885, 0.320, 1.275);
+  transition-duration:400ms;
+  transform:scale(1,1) translate3d(0,0,0);
+  cursor:pointer;
+}
+
+.learnbtn:hover{
+  transform:scale(1.01,1.01) translate3d(0,0,0);
+}
+
+.lmenu-open:checked+.learnbtn{
+  background-color:$btn-hover-bg !important;
+  color: $btn-hover-text !important;
+  border: none;
+  transition-timing-function:linear;
+  transition-duration:200ms;
+  transform:scale(0.99,0.99) translate3d(0,0,0);
+}
+
+
+.lmenu-open:checked~.l-item{
+  cursor:pointer;
+  $x: 200px;
+  transition-timing-function: cubic-bezier(0.935, 0.000, 0.340, 1.330);
+  @for $i from 1 through $l-items{
+    $lpos: calc(#{$x + 20px} * #{$i} - #{$x} * 2 - 40px);
+    &:nth-child(#{$i+2}) {
+      transition-duration: 80ms+(100ms*$i);
+      transform: translate3d($lpos, 80px, 0);
+    }
+  }
+
+  @media (max-width: 992px) and (min-width: 480px){
+    @for $i from 1 through $l-items{
+      @if $i > 2 {
+        $lpos: calc(#{$x + 20px} * #{$i - 2} - #{$x} * 2 - 40px);
+        &:nth-child(#{$i+2}) {
+          transition-duration: 80ms+(100ms*$i);
+          transform: translate3d($lpos, 160px, 0);
+        }
+      }
+    }
+  }
+  // max phone size
+  @media (max-width: 479px){
+    @for $i from 1 through $l-items{
+      &:nth-child(#{$i+2}) {
+          transition-duration: 80ms+(100ms*$i);
+          transform: translate3d(0, 80px * $i, 0);
+        }
+    }
+  }
+}

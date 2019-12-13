@@ -1,0 +1,95 @@
+@import "vars";
+
+//themes
+$themes: (
+        1: (
+                text: $cat1--text,
+                dark: $cat1,
+                mid: $cat1--mid,
+                light: $cat1--light
+        ),
+        2: (
+                text: $cat2--text,
+                dark: $cat2,
+                mid: $cat2--mid,
+                light: $cat2--light
+        ),
+        3: (
+                text: $cat3--text,
+                dark: $cat3,
+                mid: $cat3--mid,
+                light: $cat3--light
+        ),
+        4: (
+                text: $cat4--text,
+                dark: $cat4,
+                mid: $cat4--mid,
+                light: $cat4--light
+        ),
+        5:(
+                text: $cat5--text,
+                dark: $cat5,
+                mid: $cat5--mid,
+                light: $cat5--light
+        ),
+        6:(
+                text: $cat6--text,
+                dark: $cat6,
+                mid: $cat6--mid,
+                light: $cat6--light
+        )
+);
+
+@mixin themed() {
+  @each $theme, $map in $themes {
+    .category--#{$theme} & {
+      $theme-map: () !global;
+      @each $key, $submap in $map {
+        $value: map-get(map-get($themes, $theme), '#{$key}');
+        $theme-map: map-merge($theme-map, ($key: $value)) !global;
+      }
+      @content;
+      $theme-map: null !global;
+    }
+  }
+}
+
+@function t($key) {
+  @return map-get($theme-map, $key);
+}
+
+@mixin bg-dark() {
+  @include themed() {
+    background-color: t('dark');
+  }
+}
+
+@mixin bg-mid() {
+  @include themed() {
+    background-color: t('mid');
+  }
+}
+
+@mixin bg-light() {
+  @include themed() {
+    background-color: t('light');
+  }
+}
+
+@mixin text-dark() {
+  @include themed() {
+    color: t('text');
+  }
+}
+
+@mixin text-mid() {
+  @include themed() {
+    color: t('mid');
+  }
+}
+
+@mixin text-light() {
+  @include themed() {
+    color: t('light');
+  }
+}

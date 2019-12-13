@@ -1,0 +1,36 @@
+.tab-list {
+  //border-bottom: 1px solid #eee;
+  padding-left: 24px;
+  border: none;
+  svg {
+    opacity: 0.5;
+  }
+}
+
+.tab-list-item {
+  display: inline-block;
+  list-style: none;
+  margin-bottom: -1px;
+  margin-top: 10px;
+  padding: 0.5rem 0.75rem;
+  cursor: pointer;
+
+  svg{
+    height: 40px;
+    width: 60px;
+    fill: #AFC1A0;
+  }
+
+}
+
+.tab-list-active {
+  background-color: white;
+  //border: solid #eee;
+  border: none;
+  border-width: 1px 1px 0 1px;
+  border-radius: 10px 10px 0 0;
+
+  svg{
+    opacity: 1 !important;
+  }
+}

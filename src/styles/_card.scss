@@ -1,0 +1,285 @@
+@import "vars";
+
+$card-height: 336px;
+$card-width: 240px;
+$card-corner: $slightlyrounded-corner;
+$number-width: 28px;
+$header-height: 45px;
+$cat-width: $header-height;
+$body-height: $card-height - $header-height;
+$compare-section-height: $body-height * .3;
+$img-section-height: $body-height * .35;
+$example-section-height: $body-height * .3;
+$card-text-size: .8em;
+$comparison-text-size: .75em;
+
+.cards, .title-box {
+  max-width: ($card-width * 5) + ($space-between-cards * 6);
+  padding: 0 $space-between-cards $space-between-cards;
+  margin: 0 auto;
+}
+
+%img-styles {
+  background-size: contain;
+  background-position: center center;
+  background-repeat: no-repeat;
+}
+
+.principle-title {
+  color: $text--white;
+  font-size: 18px;
+  font-weight: 500;
+  text-transform: capitalize;
+}
+
+.principle-image {
+  @include bg-light;
+  @extend %img-styles;
+}
+
+.principle-number {
+  margin: 0 auto;
+  line-height: 1.5em;
+  background-color: $text--white;
+  height: $number-width;
+  width: $number-width;
+  font-size: 18px;
+  font-weight: bold;
+  border-radius: 50%;
+  text-align: center;
+  box-shadow: $default-shadow;
+
+  @include themed() {
+    color: t('dark');
+  }
+}
+
+.card-container {
+  max-width: ($space-between-cards + $card-width);
+
+  @media (max-width: $screen-sm-max) {
+    margin: 0 auto;
+  }
+}
+
+.hide {
+  display: none;
+  visibility: hidden;
+}
+
+.card {
+  background: transparent;
+  font-family: $font-stack;
+  height: $card-height;
+  min-height: $card-height;
+  width: $card-width;
+  min-width: $card-width;
+  border-radius: $card-corner;
+  margin-bottom: $space-between-cards;
+  border: none;
+  transition: transform .5s;
+
+  &:hover {
+    transform: scale3d(1.015,1.015,1);
+  }
+
+  &__face {
+    border-radius: $card-corner;
+    background: $card-bg;
+    box-shadow: $card-shadow;
+
+    &--front {
+      &__header {
+        $space-between-num-and-title: 8px;
+        border-radius: $card-corner $card-corner 0 0;
+        padding: 7px 0 7px 10px;
+        height: $header-height;
+        max-height: $header-height;
+        white-space: nowrap;
+        cursor: pointer;
+        overflow: hidden;
+
+        @include bg-dark();
+
+        .principle-title {
+          display: inline-block;
+          width: calc(100% - #{$number-width} - #{$space-between-num-and-title});
+          @extend %text-overflow-ellipsis;
+          text-align: left;
+          max-height: 30px;
+          margin-left: ($number-width + $space-between-num-and-title);
+          white-space: nowrap!important;
+        }
+
+        .principle-number {
+          display: inline-block;
+          position: absolute;
+        }
+      }
+
+      &__category {
+        display: flex;
+        width: $cat-width;
+        height: ($card-height - $header-height);
+        border-radius: 0 0 0 $card-corner;
+        z-index: 0;
+        @include bg-mid();
+        @include text-dark();
+
+        &__text {
+          position: absolute;
+          width: ($card-height - $header-height);
+          left: (-1 * ($card-height - $header-height - 35px));
+          top: 30px;
+          text-align: right;
+          font-weight: $font-weight--cat;
+          -moz-transform: rotate(270deg);  /* FF3.5+ */
+          -o-transform: rotate(270deg);  /* Opera 10.5 */
+          -webkit-transform: rotate(-90deg);  /* Saf3.1+, Chrome */
+          -moz-transform-origin: 100% 100%;
+          -o-transform-origin: 100% 100%;
+          -webkit-transform-origin: 100% 100%;
+          z-index: 10;
+          font-size: $font-size--cat;
+        }
+      }
+
+      &__body {
+        width: calc(100% - #{$cat-width});
+        height: $body-height;
+        display: -ms-flexbox;
+        display: flex;
+        -ms-flex-wrap: wrap;
+        flex-wrap: wrap;
+        float: right;
+        position: absolute;
+        top: $header-height;
+        left: $cat-width;
+        overflow: hidden;
+
+        %display-props {
+          display: inline-block;
+          width: 100%;
+          min-width: 100%;
+          color: $text--card;
+          padding: 8px 10px;
+          line-height: 1.4;
+          font-weight: 400;
+        }
+
+        &__desc {
+          font-size: $card-text-size;
+          height: $compare-section-height;
+          margin-top: 5px;
+          margin-bottom: 10px;
+          @extend %display-props;
+          @include multiLineEllipsis(1.5em, 3);
+        }
+
+        &__image {
+          z-index: 10;
+          height: $img-section-height;
+          margin: -10px 0!important;
+          @extend %display-props;
+          @extend %img-styles;
+          @include bg-light();
+          background-size: 75%;
+          padding: 0;
+        }
+
+        &__example {
+          font-size: $comparison-text-size;
+          height: $example-section-height;
+          max-height: $example-section-height;
+          border-radius: 0 0 $card-corner 0;
+          @extend %display-props;
+          //@include multiLineEllipsis(1.5em, 3);
+
+          .comparison__less:nth-of-type(2) {
+            display: none;
+          }
+        }
+
+      }
+
+      &__flipicon {
+        z-index: 11;
+        $size: 35px;
+        position: absolute;
+        height: $size;
+        width: $size;
+        transform: scaleX(-1);
+        color: $text--default;
+        background: $button-bg;
+        right: -15px;
+        bottom: calc(50% - 22px);
+        border-radius: 35px;
+        text-align: center;
+        font-size: 1.1em;
+        transition: transform .5s;
+
+        &:hover {
+          transform: scale3d(-1.12,1.12,1);
+        }
+      }
+    }
+
+    &--back {
+      display: block;
+      min-height: $card-height;
+      min-width: $card-width;
+      color: $text--white;
+
+      @include bg-dark();
+
+      &__content {
+        margin-top: 50px;
+
+        .principle-image {
+          position: relative;
+          z-index: 0;
+          $size: #{$card-width * .65};
+          height: $size;
+          width: $size;
+          margin: -15px auto 0;
+
+          @extend %img-styles;
+        }
+
+        .principle-number {
+          position: relative;
+          z-index: 10;
+        }
+
+        .principle-title {
+          margin-top: 3px;
+          text-align: center;
+        }
+      }
+
+      &__category {
+        text-align: center;
+        position: absolute;
+        bottom: 8px;
+        width: 100%;
+        font-size: .9em;
+
+        @include themed() {
+          color: t('mid');
+        }
+      }
+    }
+  }
+
+}
+
+@media (max-width: $screen-phone-max) {
+  .card-container {
+    max-width: none;
+
+    .card {
+      transform: scale(1.2);
+      margin: 50px auto;
+    }
+  }
+}

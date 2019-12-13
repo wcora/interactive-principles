@@ -1,0 +1,152 @@
+//type
+$font-stack: 'Roboto',"Segoe UI","Helvetica Neue",-apple-system,BlinkMacSystemFont,Arial,"Noto Sans",sans-serif,"Apple Color Emoji","Segoe UI Emoji","Segoe UI Symbol","Noto Color Emoji";
+$font-weight--cat: 500;
+$font-size--cat: 18px;
+
+//color
+$navy: #2a2e3e;
+$card-bg: #fff;
+$text--white: #fff;
+$text--default: #344046;
+$text--secondary: lighten($text--default, 15%);
+$text--tertiary: lighten($text--secondary, 8%);
+$text--card: $text--default;
+$text--button: $navy;
+$beige: #e5e8ef;
+//$page-bg: $beige;
+//$page-bg:#FEFCF5;
+$page-bg:#fff;
+$well-bg: darken($page-bg, 6%);
+$button-bg: $well-bg;
+$button-bg--hover: darken($button-bg, 4%);
+$border-default: $well-bg;
+
+$lessthan: #ab4f23;
+$greaterthan: #438b5e;
+
+//$cat1: #DF6D4D;
+//$cat2: #5EA67D;
+//$cat3: #379A99;
+
+
+//// seven
+//$cat1: #CC7273;
+//$cat2: #E1B397;
+//$cat3: #E2D298;
+//$cat4: #C1E199;
+//$cat5: #96B6E1;
+//$cat6: #969EE0;
+
+//// six
+$cat1: #F0AA86;
+$cat2: #E79D9D;
+$cat3: #d19ecd;
+$cat4: #A7DA71;
+$cat5: #9ADCE0;
+$cat6: #99C6ED;
+
+//// five
+//$cat1: #6C97DA;
+//$cat2: #60B9B3;
+//$cat3: #BFE08C;
+//$cat4: #FEC47B;
+//$cat5: #F39177;
+//$cat6: #C07374;
+
+
+//// four
+//$cat1: #E5845E;
+//$cat2: #D6DBA0;
+//$cat3: #90CDB6;
+//$cat4: #8DBBE2;
+//$cat5: #CD6A89;
+//$cat6: #A76493;
+
+
+//// three
+//$cat1: #F7C2E4;
+//$cat2: #CCFED7;
+//$cat3: #D8B4B5;
+//$cat4: #B5D7D8;
+//$cat5: #FDA0C7;
+//$cat6: #D0A2D9;
+
+
+//// two
+//$cat1: #584B42;
+//$cat2: #F77754;
+//$cat3: #F1AF89;
+//$cat4: #A4D1C8;
+//$cat5: #537D91;
+//$cat6: #245355;
+
+//// one
+//$cat1: #E96765;
+//$cat2: #EAA168;
+//$cat3: #AAC26B;
+//$cat4: #F0C442;
+//$cat5: #4A9F8F;
+//$cat6: #7AB6ED;
+
+$cat1--text: darken($cat1, 10%);
+$cat1--mid: lighten($cat1, 20%);
+$cat1--light: lighten($cat1--mid, 12%);
+$cat2--text: darken($cat2, 10%);
+$cat2--mid: lighten($cat2, 30%);
+$cat2--light: lighten($cat2--mid, 11%);
+$cat3--text: darken($cat3, 10%);
+$cat3--mid: lighten($cat3, 35%);
+$cat3--light: lighten($cat3--mid, 14%);
+$cat4--text: darken($cat4, 10%);
+$cat4--mid: lighten($cat4, 35%);
+$cat4--light: lighten($cat4--mid, 14%);
+$cat5--text: darken($cat5, 10%);
+$cat5--mid: lighten($cat5, 35%);
+$cat5--light: lighten($cat5--mid, 14%);
+$cat6--text: darken($cat6, 10%);
+$cat6--mid: lighten($cat6, 35%);
+$cat6--light: lighten($cat6--mid, 14%);
+
+//shadows
+$card-shadow: 3px 4px 0px -1px rgba(70, 74, 80, 0.15);
+$default-shadow: 1px 1px 0px 2px rgba(70, 74, 80, 0.15);
+
+//spacing
+$space-between-cards: 30px;
+$page-padding-mobile: 2em;
+
+/* mixin for multiline */
+@mixin multiLineEllipsis($lineHeight: 1.4em, $lineCount: 3, $bgColor: white){
+  overflow: hidden;
+  position: relative;
+  line-height: $lineHeight;
+  max-height: $lineHeight * $lineCount;
+  text-align: left;
+  margin-right: -1em;
+  padding-right: 1em;
+  &:before {
+    content: '...';
+    position: absolute;
+    right: 6px;
+    bottom: 0;
+  }
+  &:after {
+    content: '';
+    position: absolute;
+    right: 6px;
+    width: 1em;
+    height: 2em;
+    margin-top: 0.2em;
+    background: $bgColor;
+  }
+}
+
+%text-overflow-ellipsis {
+  white-space: pre-line;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+$rounded-corner: 13px;
+$slightlyrounded-corner: 8px;
+$barelyrounded-corner: 3px;

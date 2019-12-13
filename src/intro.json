@@ -1,0 +1,57 @@
+[
+  {
+    "name": "Learning Science Principles",
+    "Description": "The current set of 30 principles shown on the site is from Koedinger, Booth, and Klahr’s 2013 article Instructional Complexity and the Science to Constrain It [1], in which the authors summarized a number of different principle sets into a concise set of 30.\n\nMany other sets of Learning Science Principles have been proposed in the literature. For a listing of several existing taxonomies take a look at the LearnLab Theory Wiki. ",
+    "Category": [
+      {
+        "id": 1,
+        "cat": "Memory/Fluency",
+        "detail": " Which instructional choices best support memory to increase long-term retention of facts?"
+      },{
+        "id": 2,
+        "cat": "Induction/Refinement",
+        "detail":" Which are best for inducing general skills that produce transfer of learning to new situations?"
+      },{
+        "id": 3,
+        "cat": "Sense-making/Understanding",
+        "detail": " Which are best for sense-making processes that produce learning skills and higher learner self-efficacy toward better future learning?"
+      }
+    ]
+  },
+  {
+    "name": "Game Design Components",
+    "Description": "The Game Design Component deck aims to shed light on how game designers and developers could apply these learning principles in real educational games. The 30 Interactive Learning Science Principles (originally came from Koedinger, Booth, and Klahr’s 2013 article Instructional Complexity and the Science to Constrain It) are thereby grouped by game design stages—Pacing, Interaction, Look & Feel, Gamer Onboarding, Help & Aid, and Reflection & Reinforcement. \n",
+    "Category": [
+      {
+        "id": 1,
+        "cat":"Pacing",
+        "detail": " Relationship between activities, how things are placed throughout a game."
+      },
+      {
+        "id": 2,
+        "cat":"Look & Feel",
+        "detail":" What kind of attributes your game should have to be engaging."
+      },
+      {
+        "id": 3,
+        "cat":"Interaction",
+        "detail":" Information presentation through the use of different senses (i.e. audio, visual, etc.)"
+      },
+      {
+        "id": 4,
+        "cat":"Gamer Onboarding",
+        "detail":" Introductory materials used to prepare the player at the beginning of the game."
+      },
+      {
+        "id": 5,
+        "cat":"Help & Aid",
+        "detail":" How to give your users cues and feedback during the game to aid their learning."
+      },
+      {
+        "id": 6,
+        "cat":"Reflection/Reinforcement",
+        "detail":" Any methods/techniques used to test learning at the end of each stage of the game."
+      }
+    ]
+  }
+]
