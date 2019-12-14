@@ -1,11 +1,11 @@
 import React from 'react';
 import { Modal } from 'react-bootstrap';
 import PropTypes from 'prop-types';
-import Img from './Img';
-import Comparison from './Comparison';
-import MultipleComparisons from './MultipleComparisons';
-import GameExImg from './GameExImage';
-import RelatedLink from './RelatedLink';
+import Img from '../Img';
+import Comparison from '../Comparison';
+import MultipleComparisons from '../MultipleComparisons';
+import GameExImg from '../GameExImage';
+import RelatedLink from '../RelatedLink';
 
 class CardModal extends React.Component {
     constructor(props) {
@@ -94,7 +94,7 @@ class CardModal extends React.Component {
     renderRelated() {
         if (this.props.related) {
             let related = [];
-
+            console.log(this.props.id);
             if (this.props.related.toString().includes(',')) {
                 let items = this.props.related.split(',');
                 for (let item of items) {
@@ -109,9 +109,9 @@ class CardModal extends React.Component {
                         <h3>Related Principles</h3>
                         {related.map((item, index) => (
                             ((index + 1) < related.length) ?
-                                <span><RelatedLink key={item} id={item} onOpen={() => this.props.onOpenRelated(item)}></RelatedLink>, </span>
+                                <span key={index}><RelatedLink id={item} onOpen={() => this.props.onOpenRelated(item)}></RelatedLink>, </span>
                                 :
-                                <RelatedLink key={item} id={item} onOpen={() => this.props.onOpenRelated(item)}></RelatedLink>
+                                <RelatedLink key={index} id={item} onOpen={() => this.props.onOpenRelated(item)}></RelatedLink>
                         ))}
                     </div>
                 </div>

@@ -1,8 +1,8 @@
 import React, { Component } from 'react';
-import Card from './Card.js';
+import Card from './Cards/Card.js';
 import principles from '../principles.json';
-import Button from './Button.js';
-import CardModal from './CardModal';
+import Button from './Button/Button.js';
+import CardModal from './Cards/CardModal';
 import Intro from './Intro/Intro';
 // import CategoryFilterButton from './CategoryFilterButton';
 
@@ -384,8 +384,8 @@ export default class Principles extends Component {
     }
 
     modalOpenRelated(id) {
-        let card = principles.filter(function(item) { return item.id === id; })[0];
-        this.setState({cardInModal: card});
+        let card = principles.filter(item => { return item.id == id; });
+        this.setState({cardInModal: card[0]});
     }
 
     openRandomCard() {

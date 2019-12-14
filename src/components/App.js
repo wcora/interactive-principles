@@ -1,11 +1,12 @@
 import React, { Component } from 'react';
-// import Principles from './Principles';
 import logo from '../images/ixp_logo.svg';
-// import menuicon from '../images/menuicon.svg';
 import { HashRouter as Router, Link } from 'react-router-dom';
-// import About from './About';
-// import Sidebar from 'react-sidebar';
 import Menu from './Menu/Menu';
+// import Principles from './Principles';
+// import menuicon from '../images/menuicon.svg';
+// import About from './About/About';
+// import Sidebar from 'react-sidebar';
+
 export default class App extends Component {
 
     constructor(props) {

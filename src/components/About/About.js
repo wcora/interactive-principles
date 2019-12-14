@@ -1,5 +1,5 @@
 import React from 'react';
-import Link from './Link';
+import Link from '../Link';
 
 function Credit(name, role, link) {
     return (

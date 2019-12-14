@@ -1,7 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import Img from './Img';
-import Comparison from './Comparison';
+import Img from '../Img';
+import Comparison from '../Comparison';
 
 class Card extends React.Component {
     constructor(props) {

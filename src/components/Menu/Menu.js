@@ -2,7 +2,7 @@ import React from 'react';
 import './Menu.scss';
 import {HashRouter as Router, Route, Link} from 'react-router-dom';
 import Principles from '../Principles';
-import About from '../About';
+import About from '../About/About';
 
 class Menu extends React.Component {
     constructor(props) {
