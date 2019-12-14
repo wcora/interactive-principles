@@ -439,7 +439,7 @@ export default class Principles extends Component {
         if(event.target.checked === true) {
             if (this.state.screenWidth < 480) {
                 this.setState({
-                    lHeight: '400',
+                    lHeight: '420',
                     gHeight: '100',
                     checkGame: false,
                 });

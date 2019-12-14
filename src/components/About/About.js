@@ -64,9 +64,9 @@ function About() {
                         {Credit('Erik Harpstead', 'Project Lead', 'http://www.erikharpstead.net/')}
                         {Credit('Katie McTigue', 'Design, Content, Development', 'http://katiemctigue.com')}
                         {Credit('Minji Kim', 'Design, Content')}
-                        {Credit('Nicole Wang', 'Design')}
-                        {/*{Credit('Cora Wang', 'Design, Development', 'http://www.corawang.net/')}*/}
-                        {/*{Credit('Simran Jobanputra', 'Design, Content')}*/}
+                        {Credit('Nicole Wang', 'Design')} 
+                        {Credit('Cora Wang', 'Design, Content, Development', 'http://www.corawang.net/')} 
+                        {Credit('Simran Jobanputra', 'Design, Content, Development')}
                     </ul>
                 </div>
             </div>
