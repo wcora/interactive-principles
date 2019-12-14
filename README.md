@@ -11,8 +11,10 @@ Major updates:
     - Learning Science Principles 
 
 ![menuDemo](./src/images/demo/menu_demo.gif)
+
 2. Updated sidebar menu
     ![sideDemo](./src/images/demo/side_demo.gif)
+    
 3. Added intro page:
     ![introDemo](./src/images/demo/intro_demo.gif)
 
