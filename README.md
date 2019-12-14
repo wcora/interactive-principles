@@ -8,15 +8,17 @@ A deck of learning science principles for designing transformational games
 Major updates:
 1. Introduced two-factor menu system:
     - Game Design Component (new)
-    - Learning Science Principles 
-
-![menuDemo](./src/images/demo/menu_demo.gif)
+    - Learning Science Principles (original)
 
 2. Updated sidebar menu
-    ![sideDemo](./src/images/demo/side_demo.gif)
-    
-3. Added intro page:
-    ![introDemo](./src/images/demo/intro_demo.gif)
+    - Implemented as Checkbox to improve interactivity
+    - Close-up if click elsewhere
+
+3. Added an intro page:
+    - Implemented as Tabs
+    - Alternate between Learning Science Introduction / Game Design Introduction
+
+![demo](./src/images/demo/demo.gif)
 
 * Package Structure
 ``` 
