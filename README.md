@@ -3,6 +3,44 @@ A deck of learning science principles for designing transformational games
 
 
 ---
+##### 2019.12.13 Update
+
+Major updates:
+1. Introduced two-factor menu system:
+    - Game Design Component (new)
+    - Learning Science Principles 
+
+![menuDemo](./src/images/demo/menu_demo.gif)
+2. Updated sidebar menu
+    ![sideDemo](./src/images/demo/side_demo.gif)
+3. Added intro page:
+    ![introDemo](./src/images/demo/intro_demo.gif)
+
+* Package Structure
+``` 
+interactive-principles
+├── README.md
+├── package.json
+├── package-lock.json
+├── webpack.config.js
+├── .gitignore
+├── node_modules
+├── config
+├── public
+│   ├── favicon.ico
+│   ├── index.html
+│   └── manifest.json
+└── src
+    ├── Components
+    ├── image
+    ├── styles
+    ├── principles.json
+    ├── intro.json
+    ├── index.js
+    ├── index.html
+    ├── logo.png
+    └── favicon.ico
+```
 
 ## Developed With
 
@@ -16,8 +54,7 @@ A deck of learning science principles for designing transformational games
 
 ## Getting Started
 
-These instructions will get you a copy of the project up and running on your local machine for development and testing purposes.
-
+Run the following commands to run this project on your local server. 
 ### Prerequisites
 
 The following software is required to be installed on your system:
@@ -36,22 +73,21 @@ Type the following commands in the terminal to verify your node and npm versions
 
 Follow the following steps to get development environment running.
 
-* Clone _'react-starter'_ repository from GitHub
+* Clone _'interactive-principles'_ repository from GitHub
 
   ```bash
-  git clone https://github.com/drminnaar/react-starter.git
+  git clone https://github.com/eharpste/interactive-principles.git
   ```
 
    _OR USING SSH_
 
   ```bash
-  git clone git@github.com:drminnaar/react-starter.git
+  git clone https://github.com/eharpste/interactive-principles.git
   ```
 
 * Install node modules
 
    ```bash
-   cd react-starter
    npm install
    ```
 
@@ -138,3 +174,4 @@ npm run serve:prod
 ## Authors
 
 * **Katie McTigue** - *Design + Dev* - [kaitlinmctigue.github.io](https://kaitlinmctigue.github.io/#/)
+* **Cora Wang** - *Frontend Dev* - [www.corawang.net](https://www.corawang.net)
