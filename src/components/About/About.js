@@ -66,7 +66,7 @@ function About() {
                         {Credit('Minji Kim', 'Design, Content')}
                         {Credit('Nicole Wang', 'Design')} 
                         {Credit('Cora Wang', 'Design, Content, Development', 'http://www.corawang.net/')} 
-                        {Credit('Simran Jobanputra', 'Design, Content, Development')}
+                        {Credit('Simran Jobanputra', 'Design, Content')}
                     </ul>
                 </div>
             </div>
