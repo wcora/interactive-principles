@@ -171,11 +171,11 @@ npm run serve:prod
 
 ## Thanks
 
-* **Douglas Minnaar** - *React Starter Project* - [drminnaar](https://github.com/drminnaar)
+* **Erik Harpstead** - *Project Advisor* - [erikharpstead.net](http://www.erikharpstead.net)
 
 ---
 
 ## Authors
 
 * **Katie McTigue** - *Design + Dev* - [kaitlinmctigue.github.io](https://kaitlinmctigue.github.io/#/)
-* **Cora Wang** - *Frontend Dev* - [www.corawang.net](https://www.corawang.net)
+* **Cora Wang** - *Design + Dev* - [corawang.dev](https://corawang.dev)
